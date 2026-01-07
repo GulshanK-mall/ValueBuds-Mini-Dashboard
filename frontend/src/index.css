@@ -1,0 +1,366 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* App Container Styles */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f3e9;
+}
+
+.app-header {
+  background: linear-gradient(to bottom right, #2f7d61, #5c8f4f);
+  color: white;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.app-header h1 {
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+
+.app-header-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.app-header-button {
+  padding: 0.5rem 1.5rem;
+  border: 2px solid white;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.app-header-button.active {
+  background-color: white;
+  color: #5c8f4f;
+}
+
+.app-header-button.inactive {
+  background-color: transparent;
+  color: white;
+}
+
+.app-header-button.inactive:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.app-main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 80rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* DataTable Styles */
+.data-table-container {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.data-table-filters {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.data-table-search {
+  flex: 1;
+  min-width: 200px;
+}
+
+.data-table-search input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #71b460;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.data-table-search input:focus {
+  outline: none;
+  border-color: #29541e;
+}
+
+.data-table-filter-group {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-left: 1.25rem;
+}
+
+.data-table-select {
+  padding: 0.75rem;
+  border: 1px solid #71b460;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  min-width: 150px;
+}
+
+.data-table-select:focus {
+  outline: none;
+  border-color: #29541e;
+}
+
+.data-table-clear-button {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #dc2626;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background-color: white;
+  color: #dc2626;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.data-table-clear-button:hover {
+  background-color: #dc2626;
+  color: white;
+}
+
+.data-table-wrapper {
+  overflow-x: auto;
+}
+
+.data-table-loading {
+  padding: 3rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table thead {
+  background-color: #f9fafb;
+}
+
+.data-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 2px solid #e5e7eb;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+
+.data-table th:hover {
+  background-color: #f3f4f6;
+}
+
+.data-table td {
+  padding: 1rem;
+  color: #374151;
+}
+
+.data-table tbody tr {
+  transition: background-color 0.2s;
+  cursor: pointer;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.data-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.data-table tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.data-table-empty {
+  padding: 3rem;
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.data-table-pagination {
+  padding: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.data-table-pagination-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.data-table-pagination-button:hover:not(:disabled) {
+  background-color: #6366f1;
+  color: white;
+  border-color: #6366f1;
+}
+
+.data-table-pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.data-table-pagination-info {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* DetailView Styles */
+.detail-view-container {
+  width: 100%;
+}
+
+.detail-view-back-button {
+  padding: 0.75rem 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: #374151;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.detail-view-back-button:hover {
+  background-color: #f9fafb;
+  border-color: #6366f1;
+  color: #6366f1;
+}
+
+.detail-view-content {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+}
+
+.detail-view-title {
+  margin-bottom: 2rem;
+  color: #111827;
+  font-size: 1.875rem;
+  border-bottom: 2px solid #6366f1;
+  padding-bottom: 0.5rem;
+}
+
+.detail-view-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.detail-view-loading {
+  padding: 3rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+.detail-view-error {
+  padding: 3rem;
+  text-align: center;
+  color: #ef4444;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detail-row-full {
+  grid-column: 1 / -1;
+}
+
+.detail-row-label {
+  font-weight: 600;
+  color: #6b7280;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.detail-row-value {
+  font-size: 1.125rem;
+  color: #111827;
+  word-break: break-word;
+}
+
+.detail-row-value a {
+  color: #2563eb;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.detail-row-value a:hover {
+  color: #1d4ed8;
+}
+
+.detail-section {
+  margin-bottom: 2.5rem;
+}
+
+.detail-section:last-child {
+  margin-bottom: 0;
+}
+
+.detail-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2f7d61;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.detail-subsection {
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.detail-subsection:last-child {
+  margin-bottom: 0;
+}
+
+.detail-subsection-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 1rem;
+}
