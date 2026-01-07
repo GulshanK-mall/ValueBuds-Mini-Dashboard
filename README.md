@@ -44,8 +44,6 @@ npm install
 npm run dev
 ```
 
-Access: `http://localhost:5173`
-
 ## Key Features
 
 - **Producers**: View/filter by city, store name. Detail view includes locations, contacts, licenses, media
